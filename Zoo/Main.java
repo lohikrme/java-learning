@@ -1,5 +1,5 @@
 // Main.java
-// 15th april 2024
+// 7th may 2024
 
 import java.util.Collections; // use this with the compareTo interface of Dates and animals
 import java.util.ArrayList;
@@ -95,10 +95,14 @@ public class Main {
         zoo.printSortedByAge();
         System.out.println();
 
-        System.out.println("Next we will try to add the tiger named 'arttu' again and see what that command returns");
-        System.out.println(zoo.add(tiger11).toString());
+        System.out.println("Next we will try to add the shark named 'arttu' again and see what that command returns");
+        System.out.println(zoo.add(shark13).toString());
         System.out.println();
-        System.out.println("As expected, adding returned the shark named 'Arttu' and replaced it with tiger named 'Arttu'");
+        System.out.println("As expected, adding returned the tiger named 'Arttu'. Now make sure tiger was not replaced:");
+        zoo.printSortedByName();
+        System.out.println();
+        System.out.println("As expected, tiger is still inside the zoo, Continent word tells its tiger not shark!");
+        
         System.out.println();
 
         System.out.println("Next trying out if the remove function works properly. Trying to remove the shark named 'Bandit'");
@@ -106,6 +110,7 @@ public class Main {
         System.out.println("Bandit should we removed, print animals by name");
         zoo.printSortedByName();
         System.out.println();
+
         System.out.println("Everything looks so far as expected. Therefore, the zoo class and all assisting classes seems to work correctly!");
     }
 }

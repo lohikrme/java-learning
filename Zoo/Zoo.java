@@ -1,3 +1,5 @@
+// 7th may 2024
+
 import java.util.Map; // needed for treemap ds
 import java.util.TreeMap; // needed for treemap ds
 import java.util.Collections; // needed for sorting the animals
@@ -7,7 +9,14 @@ public class Zoo {
     private Map<String, Animal> enclosures = new TreeMap<>();
 
     public Animal add(Animal animal) {
-        return enclosures.put(animal.getName(),animal);
+        // IF animal alrdy exists, return the old existing animal no changes
+        if(enclosures.containsKey(animal.getName())) {
+            return enclosures.get(animal.getName());
+        // IF animal not exist, add a new animal
+        } else {
+            enclosures.put(animal.getName(), animal);
+            return null;
+        }
     }
 
     public Animal remove(String nameOfAnimal) {
