@@ -1,5 +1,5 @@
 // Main.java
-// 7th may 2024
+// 8th may 2024
 
 import java.util.Collections; // use this with the compareTo interface of Dates and animals
 import java.util.ArrayList;
@@ -77,7 +77,7 @@ public class Main {
 
         System.out.println("Animals are created, 3 tigers and 2 sharks.");
         System.out.println("Next we will test, what happens, if i try to insert 2 animals of same name.");
-        System.out.println("If 'Arttu' has Sea-Area, it means that newer Arttu replaced old one");
+        System.out.println("If 'Arttu' has Sea-Area: CARIBBEAN_SEA, it means that newer Arttu replaced old one");
 
         Zoo zoo = new Zoo();
         zoo.add(tiger10);
@@ -95,13 +95,15 @@ public class Main {
         zoo.printSortedByAge();
         System.out.println();
 
-        System.out.println("Next we will try to add the shark named 'arttu' again and see what that command returns");
-        System.out.println(zoo.add(shark13).toString());
+        System.out.println("Next we will try to add the tiger named 'arttu' again.");
+        System.out.println("Ideally add-command returns the info of the shark, ");
+        System.out.println("and then tiger named 'Arttu' is found in the list");
+        System.out.println(zoo.add(tiger11).toString());
         System.out.println();
-        System.out.println("As expected, adding returned the tiger named 'Arttu'. Now make sure tiger was not replaced:");
+        System.out.println("As expected, adding returned the shark named 'Arttu'. Now make sure tiger replaced the shark:");
         zoo.printSortedByName();
         System.out.println();
-        System.out.println("As expected, tiger is still inside the zoo, Continent word tells its tiger not shark!");
+        System.out.println("As expected, now tiger is inside the zoo, Continent word tells its tiger not shark!");
         
         System.out.println();
 
