@@ -1,11 +1,15 @@
 // Main.java
-// 8th may 2024
+// 10th may 2024
 
 import java.util.Collections; // use this with the compareTo interface of Dates and animals
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
+
+        // set language to be finland, so äöå work also and numbers are formed finnish way
+        Locale.setDefault(new Locale("fi", "FI"));
 
         // test that Date object's basic abilities work
         System.out.println();
@@ -41,7 +45,7 @@ public class Main {
         // test that Tiger class that inherited Animal class works
         System.out.println("Testing Tiger class...");
         Tiger tiger1 = new Tiger();
-        Tiger tiger2 = new Tiger("Tigru", date2, 255, false, Continents.ASIA);
+        Tiger tiger2 = new Tiger("Tigru", Species.TIGER, date2, 255, false, Continents.ASIA);
         System.out.println("Tiger1: " + tiger1.toString());
         System.out.println("Tiger2: " + tiger2.toString());
         System.out.println(tiger2.getName());
@@ -52,7 +56,7 @@ public class Main {
 
         // test that also Shark class works which also inherited Animal class
         System.out.println("Testing Shark class...");
-        Shark shark1 = new Shark("Hampaaton", date3, 1500.2, true, SeaAreas.SOUTH_ATLANTIC_OCEAN);
+        Shark shark1 = new Shark("Hampaaton", Species.SHARK, date3, 1500.2, true, SeaAreas.SOUTH_ATLANTIC_OCEAN);
         System.out.println(shark1.toString());
         shark1.move();
         shark1.utter();
@@ -69,11 +73,11 @@ public class Main {
         Date date13 = new Date(6, 4, 2004);
         Date date14 = new Date(10, 10, 2015);
 
-        Tiger tiger10 = new Tiger("David", date10, 350, false, Continents.ASIA);
-        Tiger tiger11 = new Tiger("Arttu", date11, 250, false, Continents.ASIA);
-        Tiger tiger12 = new Tiger("Silja", date12, 300, true, Continents.ASIA);
-        Shark shark13 = new Shark("Arttu", date13, 750, false, SeaAreas.CARIBBEAN_SEA);
-        Shark shark14 = new Shark("Bandit", date14, 800, true, SeaAreas.SARGASSO_SEA);
+        Tiger tiger10 = new Tiger("Öykkäri", Species.TIGER, date10, 350, false, Continents.ASIA);
+        Tiger tiger11 = new Tiger("Arttu", Species.TIGER, date11, 250, false, Continents.ASIA);
+        Tiger tiger12 = new Tiger("Silja", Species.TIGER, date12, 300.850000001, true, Continents.ASIA);
+        Shark shark13 = new Shark("Arttu", Species.SHARK, date13, 750, false, SeaAreas.CARIBBEAN_SEA);
+        Shark shark14 = new Shark("Bandit", Species.SHARK, date14, 800, true, SeaAreas.SARGASSO_SEA);
 
         System.out.println("Animals are created, 3 tigers and 2 sharks.");
         System.out.println("Next we will test, what happens, if i try to insert 2 animals of same name.");

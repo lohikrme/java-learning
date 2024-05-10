@@ -1,9 +1,12 @@
 // Animal.java
-// 15th april 2024
+// 10th may 2024
+
+import java.text.DecimalFormat;
 
 abstract public class Animal 
 implements Comparable<Animal>{
     private String name;
+    private Species species;
     private Date birth;
     private double weight;
     private boolean female;
@@ -11,17 +14,19 @@ implements Comparable<Animal>{
     // default constructor
     public Animal() {
         this.name = "Haukku";
-        this.birth = new Date(1, 1, 2000);
-        this.weight = 200.5;
+        this.species = Species.LIZARD;
+        this.birth = new Date(1, 1, 2010);
+        this.weight = 20.5;
         this.female = true;
     }
 
     // constructor with parameters
-    public Animal (String name, Date birthDate, double weight, boolean female) {
+    public Animal (String name, Species species, Date birthDate, double weight, boolean female) {
         this.name = name;
         this.birth = birthDate;
         this.weight = weight;
         this.female = female;
+        this.species = species;
     }
 
     public String getName() {
@@ -30,6 +35,14 @@ implements Comparable<Animal>{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSpecies() {
+        return this.species.toString();
+    }
+
+    public void setSpecies(Species sp) {
+        this.species = sp;
     }
 
     public Date getBirth() {
@@ -57,10 +70,13 @@ implements Comparable<Animal>{
     }
 
     public String toString() {
-        return "Name: " + this.name + " " 
-        + "Birthdate: " + this.birth.toString() + " " 
-        + "Weight: " + Double.toString(this.weight) + " " 
-        + "Gender: " + (this.female ? "female" : "male");
+        DecimalFormat df = new DecimalFormat("0.###");
+        String weightStr = df.format(this.weight);
+        return "Name: " + this.name + ". " 
+        + "Species: " + this.species.toString() + ". "
+        + "Birthdate: " + this.birth.toString() + ". " 
+        + "Weight: " + weightStr + ". " 
+        + "Gender: " + (this.female ? "female" : "male") + ". ";
     }
 
     abstract void move();

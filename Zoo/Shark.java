@@ -1,13 +1,16 @@
+// Shark.java
+// 10th may 2024
+
 public class Shark extends Animal {
     private SeaAreas sea;
 
     public Shark() {
-        super();
+        super("Jaws", Species.SHARK, new Date(1, 1, 2010), 1500, true);
         this.sea = SeaAreas.SARGASSO_SEA;
     }
 
-    public Shark(String name, Date birth, double weight, boolean female, SeaAreas sea) {
-        super(name, birth, weight, female);
+    public Shark(String name, Species species, Date birth, double weight, boolean female, SeaAreas sea) {
+        super(name, species, birth, weight, female);
         this.sea = sea;
     }
 
@@ -30,6 +33,6 @@ public class Shark extends Animal {
     @Override
     public String toString() {
         return super.toString() 
-        + " Sea-Area: " + this.sea;
+        + "Sea-Area: " + this.sea + ". ";
     }
 }

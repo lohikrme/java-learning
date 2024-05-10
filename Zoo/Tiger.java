@@ -1,13 +1,16 @@
+// Tiger.java
+// 10th may 2024
+
 public class Tiger extends Animal {
     private Continents continent;
 
     Tiger() {
-        super();
+        super("Tigru", Species.TIGER, new Date(1, 1, 2010),210.5, true);
         this.continent = Continents.ASIA;
     }
 
-    Tiger(String name, Date birth, double weight, boolean female, Continents continent) {
-        super(name, birth, weight, female);
+    Tiger(String name, Species species, Date birth, double weight, boolean female, Continents continent) {
+        super(name, species, birth, weight, female);
         this.continent = continent;
     }
 
@@ -29,7 +32,7 @@ public class Tiger extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + " " 
-        + "Continent: " +  this.continent;
+        return super.toString()
+        + "Continent: " +  this.continent + ". ";
     }
 }
